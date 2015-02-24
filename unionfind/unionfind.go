@@ -2,10 +2,12 @@ package main
 
 import "fmt"
 
+// UF will be our main object.
 type UF struct {
 	arrayN []int
 }
 
+// init initializes the array to N size.
 func (u *UF) init(size int) {
 	for i := 0; i < size; i++ {
 		u.arrayN = append(u.arrayN, i)
@@ -13,6 +15,7 @@ func (u *UF) init(size int) {
 	fmt.Println(u.arrayN)
 }
 
+// Union makes a union between two nodes.
 func (u *UF) Union(a int, b int) {
 	aid := u.arrayN[a]
 	bid := u.arrayN[b]
@@ -23,6 +26,7 @@ func (u *UF) Union(a int, b int) {
 	}
 }
 
+// Connected returns true is two nodes are connected.
 func (u *UF) Connected(a int, b int) bool {
 	return u.arrayN[a] == u.arrayN[b]
 }
@@ -36,6 +40,5 @@ func main() {
 	myUF.Union(3, 17)
 	fmt.Println(myUF.Connected(1, 17))
 	fmt.Println(myUF.Connected(1, 9))
-
 	fmt.Println(myUF.arrayN)
 }
