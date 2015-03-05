@@ -1,3 +1,7 @@
+/*Unionfind use a set of trees (a forest) to find the connectedness of two nodes.
+* The runtime of this is O(N^2)
+ */
+
 package main
 
 import "fmt"

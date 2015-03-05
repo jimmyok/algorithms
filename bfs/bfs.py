@@ -30,13 +30,13 @@ class BFS(object):
   def bfs(self):
     count = 0
     while not self.q.empty():
-      count += 1
       node = self.q.get()
       adjacencies = self.graph[node]
       for node in adjacencies:
         if node not in self.done:
           self.done.append(node)
           self.q.put(node)
+      count += 1
     print count
 
 
