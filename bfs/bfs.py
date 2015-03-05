@@ -27,7 +27,7 @@ class BFS(object):
     print "Root Node %d" % self.root_node
     self.q.put(self.root_node)
 
-  def bfs(self):
+  def search(self):
     count = 0
     while not self.q.empty():
       node = self.q.get()
@@ -43,7 +43,7 @@ class BFS(object):
 def main():
   graph = ReadFile("input.txt")
   b = BFS(graph)
-  b.bfs()
+  b.search()
   print sorted(b.done)
 
 
